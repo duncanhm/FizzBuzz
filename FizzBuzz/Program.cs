@@ -11,35 +11,49 @@ namespace FizzBuzz
         static void Main()
         {
             // Total only odd numbers in array
-            //int oddTotal = 0;
-            //int[] grades = new int[] { 98, 75, 84, 26, 47, 21 };
 
-            //for (int i = 0; i <= grades.Length; i++)
-            //{
-            //    if (grades[i] % 2 == 0)
-            //    {
-            //        oddTotal += grades[i];
-            //    }
-            //}
-            //Console.WriteLine(oddTotal);
-            //Console.Read();
+            int[] score = new int[] { 1, 5, 6, 2, 8, 15, 13, 17, 4, 12 };
+            int sum = 0;
+            for (int i = 0; i <= 9; i++)
+            {
+                if (score[i] % 2 == 1)
+                {
+                    sum = sum + score[i];
+                }
+            }
+            Console.WriteLine("Sum:" + sum);
 
 
             // Given an array of integers, write a method to sum the elements in the array, knowing that some of the elements may be very large integers.
 
+            int[] arr = new int[] { 1, 2, 3 };
+            int sum2 = 0;
+            foreach (var i in arr)
+            {
+                sum2 += i;
+            }
+            Console.WriteLine(sum2);
+
+            // OR, using LINQ...
+
+            int sum3 = arr.Sum();
+
             // Given a string, reverse it.
-            // See StringHelper class for ReverseString method.
 
-            string t = "Products";
-            Console.WriteLine(StringHelper.ReverseString(t));
-
+            string p = "Products";
+            Console.WriteLine(StringHelper.ReverseString(p));
             Console.WriteLine(StringHelper.ReverseString("Switzerland"));
+
+            string t = "terrible";
+            Console.WriteLine(StringHelper.ReverseStringDirect(t));
+            Console.WriteLine(StringHelper.ReverseStringDirect("Germany"));
+
 
             // Given a string, remove any repeated letters.
 
-            string input2 = "Duncan Howard-McGuire";
+            string name = "Duncan Howard-McGuire";
             var filteredString = new StringBuilder();
-            foreach (char c in input2)
+            foreach (char c in name)
             {
                 if (filteredString.ToString().IndexOf(c) == -1)
                 {
@@ -47,7 +61,6 @@ namespace FizzBuzz
                 }
             }
             Console.WriteLine(filteredString);
-            Console.ReadKey();
 
             // FizzBuzz
 
